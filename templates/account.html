@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %}My Account{% endblock %}
+
+{% block content %}
+    <h1>My Locomotives</h1>
+    {% if locomotives %}
+        <ul>
+            {% for locomotive in locomotives %}
+                <li>{{ locomotive.name }} - {{ locomotive.hp }} HP - Acquired on {{ locomotive.date }}</li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>You have no locomotives.</p>
+    {% endif %}
+{% endblock %}
+
